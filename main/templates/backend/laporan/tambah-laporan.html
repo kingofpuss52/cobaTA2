@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% block title %} Laporan {% endblock %}
+{% block menu %} Tambah Laporan Baru {% endblock %}
+{% block link_menu %} Laporan {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %} 
+
+<div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-6">
+        <!-- general form elements -->
+        <div class="card card-primary">
+          <!-- form start -->
+          <form method="POST" enctype="multipart/form-data">
+              <div class="card-body">
+                  <div class="form-group">
+                      {% csrf_token %}
+                      {{ form|crispy }}
+              </div>
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+              <a href="/backend/laporan">
+                <button type="button" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </button>
+              </a>
+
+              <button type="submit" class="btn btn-success">
+                <i class="fas fa-plus"></i> Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.row -->
+</div><!-- /.container-fluid -->
+
+
+{% endblock %}
+

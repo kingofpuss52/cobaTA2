@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+{% block title %} SI Tracer Study | Alumni {% endblock %}
+{% block menu %} Detail Alumni | {{ lihat.id }} {% endblock %}
+{% block link_menu %} Alumni {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-user"></i>
+                Profil Alumni
+              </h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <dl class="row">
+                  <dt class="col-sm-4">Nama</dt>
+                    <dd class="col-sm-8">{{ lihat.nama_lengkap }}</dd>
+                  <dt class="col-sm-4">NIS</dt>
+                    <dd class="col-sm-8">{{ lihat.nis }}</dd>
+                  <dt class="col-sm-4">Username</dt>
+                    <dd class="col-sm-8">{{ user.username }}</dd>
+                  <dt class="col-sm-4">Tempat / Tanggal Lahir</dt>
+                    <dd class="col-sm-8">{{ lihat.tempat_lahir }} / {{ lihat.tanggal_lahir }}</dd>
+                  <dt class="col-sm-4">Kelas</dt>
+                    <dd class="col-sm-8">{{ lihat.kelas }}</dd>
+                  <dt class="col-sm-4">Alamat</dt>
+                    <dd class="col-sm-8">{{ lihat.alamat }}</dd>
+                  <dt class="col-sm-4">Email</dt>
+                    <dd class="col-sm-8">{{ user.email }}</dd>
+                  <dt class="col-sm-4">No. Handphone</dt>
+                    <dd class="col-sm-8">{{ lihat.no_hp }}</dd>
+                  
+                  <div class="col-md-6">
+                    <a href="/backend/alumni/{{ user.id }}">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-arrow-back"></i> Kembali
+                        </button>
+                    </a>
+                  </div>
+                  
+                </dl>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- ./col -->
+      </div>
+</div><!-- /.container-fluid -->
+
+{% endblock %}

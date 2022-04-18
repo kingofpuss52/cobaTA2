@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+{% block title %} SI Tracer Study | Dashboard {% endblock %}
+{% block menu %} Dashboard {% endblock %}
+{% block link_menu %} Dashboard {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- BAR CHART -->
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Bar Chart</h3>
+  
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                    <canvas id="myChart" width="400" height="300"></canvas>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+  
+        </div>
+        <!-- /.col (LEFT) -->
+
+        <div class="col-md-6">
+            <!-- BAR CHART -->
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Bar Chart</h3>
+  
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                    <canvas id="myChart2" width="400" height="300"></canvas>
+
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+  
+        </div>
+
+      </div>
+</div>
+
+  
+
+{% endblock %}

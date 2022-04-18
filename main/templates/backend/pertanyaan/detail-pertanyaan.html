@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% block title %} Pertanyaan {% endblock %}
+{% block menu %} Detail Pertanyaan | {{ lihat_detail.id }} {% endblock %}
+{% block link_menu %} Pertanyaan {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %} 
+
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">
+        Pertanyaan
+      </h3>
+    </div>
+    <div class="card-body">
+      {{ lihat_detail.pertanyaan }}
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+        Jenis Pertanyaan : {{ lihat_detail.jenis }}
+    </div>
+    <!-- /.card-footer-->
+</div>
+
+<div class="col-md-6">
+    <a href="/backend/pertanyaan">
+        <button type="button" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </button>
+    </a>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% block title %} Laporan {% endblock %}
+{% block menu %} Detail Laporan | {{ lihat.id }} {% endblock %}
+{% block link_menu %} Laporan {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %} 
+
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">
+        Klik link dibawah ini jika ingin mendownload dokumen.
+      </h3>
+    </div>
+    <div class="card-body">
+      <a href="{{ lihat.file_laporan.url }}">
+        {{ lihat.file_laporan }}
+      </a>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+      {{ lihat.tanggal_upload }}
+    </div>
+    <!-- /.card-footer-->
+</div>
+
+<div class="col-md-6">
+    <a href="/backend/laporan">
+        <button type="button" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </button>
+    </a>
+</div>
+
+
+{% endblock %}
+

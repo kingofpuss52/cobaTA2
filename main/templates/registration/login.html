@@ -1,0 +1,34 @@
+{% extends 'registration/base.html' %}
+{% block title %} Login {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %} 
+
+<!-- /.login-logo -->
+<div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Silahkan login terlebih dahulu.</p>
+
+      <form method="POST">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          {{ form|crispy }}
+        </div>
+        <div class="row">
+          <div class="col-8">
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+    </div>
+    <!-- /.login-card-body -->
+</div>
+
+{% endblock %}
+
+

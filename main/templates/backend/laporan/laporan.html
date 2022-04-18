@@ -1,0 +1,77 @@
+{% extends 'main/base.html' %}
+{% block title %} SI Tracer Study | Laporan {% endblock %}
+{% block menu %} Laporan {% endblock %}
+{% block link_menu %} Laporan {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Pengelolaan Laporan</h3>
+
+              <div class="card-tools">
+                <div class="input-group input-group-sm">
+                    <a href="/backend/laporan/tambah-laporan">
+                        <button type="button" class="btn btn-primary btn-block">
+                            <i class="fas fa-plus"></i> Buat Baru
+                        </button>
+                    </a>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>ID</th>
+                    <th>File Laporan</th>
+                    <th>Tanggal Upload</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                {% for lht in lihat %}
+                <tbody>
+                  <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ lht.id }}</td>
+                    <td>{{ lht.file_laporan }}</td>
+                    <td>{{ lht.tanggal_upload }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="/backend/laporan/detail-laporan/{{ lht.id }}">
+                                <button type="submit" class="btn btn-info">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </a>
+                            <a href="/backend/laporan/update-laporan/{{ lht.id }}">
+                                <button type="submit" class="btn btn-warning">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </a>
+                            <a href="/backend/laporan/hapus-laporan/{{ lht.id }}">
+                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default">
+                                <i class="fas fa-trash"></i>
+                              </button>
+                            </a>
+                        </div>
+                    </td>
+                  </tr>
+                  {% empty %} <td><h2>Data tidak ada.</h2></td>
+                </tbody>
+                {% endfor %}
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+</div><!-- /.container-fluid -->
+
+{% endblock %}
